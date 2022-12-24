@@ -1,4 +1,5 @@
-FROM node:16
+ARG ARCH=
+FROM ${ARCH}node:16
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -15,5 +16,5 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-EXPOSE 8080
+EXPOSE 80
 CMD [ "node", "server.js" ]
